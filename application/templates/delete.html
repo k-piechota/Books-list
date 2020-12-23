@@ -1,0 +1,23 @@
+{% extends "results.html" %}
+{% block additionalscripts %}
+$("#myModal").modal();
+{% endblock %}
+
+{% block additional %}
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Czy na pewno chcesz usunąć książkę?</p>
+        </div>
+
+        <div class="modal-footer">
+          <form action="" method="post">
+            <button style="margin: auto" class="btn btn-default" type="submit">Usuń</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

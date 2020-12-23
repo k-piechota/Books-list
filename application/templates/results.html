@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block script %}
+<script src="{{ url_for('static', filename='js/ctable.js') }}"></script>
+<script>
+    window.onload = function () {
+        createTable()
+        {% block additionalscripts %}
+        {% endblock %}
+    }
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+{% block additional %}
+{% endblock %}
+
+<div class="row">
+  <div class="col-sm">
+    <label><i class="material-icons">filter_alt</i> Tytuł</label>
+    <input class="form-control" id="title" name="Tytuł">
+  </div>
+  <div class="col-sm">
+    <label><i class="material-icons">filter_alt</i> Autor</label>
+    <input class="form-control" id="author" name="Autor">
+  </div>
+    <div class="col-sm">
+    <label><i class="material-icons">filter_alt</i> Data publikacji</label>
+      <div class="row">
+        <div class="col-sm"><input class="form-control" id="from" name="Od" placeholder="Od"></div>
+        <div class="col-sm"><input class="form-control" id="to" name="Do" placeholder="Do"></div>
+      </div>
+  </div>
+  <div class="col-sm">
+    <label><i class="material-icons">filter_alt</i> Język publikacji</label>
+    <input class="form-control" id="language" name="Język">
+  </div>
+</div>
+
+<table id="book-table" class="table table-striped" style="margin-top: 10px">
+  <thead>
+    <tr>
+      <th scope="col">Tytuł</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Data publikacji</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Liczba stron</th>
+      <th scope="col">Okładka</th>
+      <th scope="col">Język publikacji</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+  </tbody>
+</table>
+{% endblock %}

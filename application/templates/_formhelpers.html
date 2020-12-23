@@ -1,0 +1,13 @@
+{% macro render_field(field) %}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <div class="alert alert-danger" role="alert">
+			{{ error }}
+      </div>
+    {% endfor %}
+  {% endif %}
+  <div class="form-group">
+    {{ field.label }}
+    <input class="form-control" id='{{ field.name }}' name='{{ field.name }}' value="{{ field.data }}">
+  </div>
+{% endmacro %}

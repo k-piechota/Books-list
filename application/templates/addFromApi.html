@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block script %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="width: 50%;">
+    <form id="book-form" name="book-form" method="post">
+        {{ render_field(form.keyword) }}
+        {{ render_field(form.title) }}
+        {{ render_field(form.author) }}
+        {{ render_field(form.subject) }}
+        {{ render_field(form.publisher) }}
+        {{ render_field(form.isbn) }}
+        {{ render_field(form.lccn) }}
+        {{ render_field(form.oclc) }}
+        <div class="container" style="text-align: center; padding-top: 10px">
+            <button type="submit" class="btn btn-primary" id="book-button"><i class="material-icons">cloud_upload</i> Dodaj książkę </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
